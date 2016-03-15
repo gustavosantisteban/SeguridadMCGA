@@ -81,6 +81,8 @@ namespace SeguridadWebv2.Models
         // Add the ApplicationGroups property:
         public virtual IDbSet<ApplicationGroup> ApplicationGroups { get; set; }
 
+        public DbSet<Auto> Autos { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
         // Override OnModelsCreating:
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,4 +1,4 @@
-﻿using SistemaWebData.Models;
+﻿using SeguridadWebv2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +9,11 @@ namespace SeguridadWebv2.Controllers
 {
     public class HomeController : Controller
     {
-        SistemaWebContext db = new SistemaWebContext();
-        //
-        // GET: /Home/
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-            var showautos = db.Autos.ToList();
-            return View(showautos);
+            var autosshow = db.Autos.ToList();
+            return View(autosshow);
         }
 
         public ActionResult About()

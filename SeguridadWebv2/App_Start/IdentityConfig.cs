@@ -281,6 +281,38 @@ namespace SeguridadWebv2.Models
                 },
              };
             grupos.ForEach(c => db.ApplicationGroups.Add(c));
+
+            var autos = new List<Auto> {
+                new Auto {
+                    Marca = "BMW",
+                    Modelo = "Serie 3",
+                    Precio ="720.000",
+                    Kilometros = 22000,
+                    Imagen = "~/Content/img/bmw_auto.jpg"
+                },
+                new Auto {
+                    Marca = "BMW",
+                    Modelo = "Serie 3 Executive Premiun",
+                    Precio ="830.000",
+                    Kilometros = 15000,
+                    Imagen = "~/Content/img/bmw_rojo.jpg"
+                },
+                new Auto {
+                    Marca = "BMW",
+                    Modelo = "Serie 1",
+                    Precio ="650.000",
+                    Kilometros = 86000,
+                    Imagen = "~/Content/img/bmw_auto2.jpg"
+                },
+                new Auto {
+                    Marca = "Mercedes Benz",
+                    Modelo = "Clase C",
+                    Precio ="975.000",
+                    Kilometros = 15000,
+                    Imagen = "~/Content/img/mercedes_benz.jpg"
+                }
+            };
+            autos.ForEach(c => db.Autos.Add(c));
         }
     }
 
