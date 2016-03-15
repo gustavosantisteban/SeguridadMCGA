@@ -743,11 +743,34 @@ box-header:before,
 
 /*Final Panel Confirmar Reserva*/
 
-.img-hotel {
-   width:100%;
-   min-height:200px;
-   border: 0px!important;
-   padding: 0px;
-   border-radius: 0;
-   border: 0px!important;
+/*Auto List*/
+.thumbnail {
+    width: 287px;
+    height: 320px;
 }
+
+img {
+   max-height: 100%;
+   max-width: 70%;
+}
+
+img:hover {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+        filter: alpha(opacity=50); /* IE7 */
+        opacity: 0.6;
+}
+
+.auto-list > li:last-child{}
+.auto-list > li > .box {
+    display: block;
+    position: relative;
+    padding: 8px;
+    border-radius: 3px;
+    color: #fff;
+}
+.auto-list > li > .box:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,3);
+    text-decoration: none;
+}
+
+/*Fin Auto List*/

@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace SeguridadWebv2.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, AllPermisos")]
     public class AccionesAdminController : Controller
     {
         public AccionesAdminController()

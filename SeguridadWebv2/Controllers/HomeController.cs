@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaWebData.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +9,13 @@ namespace SeguridadWebv2.Controllers
 {
     public class HomeController : Controller
     {
+        SistemaWebContext db = new SistemaWebContext();
         //
         // GET: /Home/
         public ActionResult Index()
         {
-            return View();
+            var showautos = db.Autos.ToList();
+            return View(showautos);
         }
 
         public ActionResult About()
@@ -26,6 +29,10 @@ namespace SeguridadWebv2.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+        public ActionResult Dashboard()
+        {
             return View();
         }
 	}

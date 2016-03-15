@@ -12,6 +12,7 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace SeguridadWebv2.Controllers
 {
+    [Authorize(Roles = "Admin, AllUsuarios")]
     public class UsuariosAdminController : Controller
     {
         public UsuariosAdminController()

@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace SeguridadWebv2.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, AllGrupos")]
     public class GruposAdminController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

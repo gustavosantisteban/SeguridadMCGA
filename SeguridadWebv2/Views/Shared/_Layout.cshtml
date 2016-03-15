@@ -25,7 +25,7 @@
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                         @if (Request.IsAuthenticated) {
-                            <li>@Html.ActionLink("Dashboard", "Index", "UsuariosAdmin")</li>
+                            <li>@Html.ActionLink("Dashboard", "Dashboard", "Home")</li>
                         }
                 </ul>                
                 @Html.Partial("_LoginPartial")

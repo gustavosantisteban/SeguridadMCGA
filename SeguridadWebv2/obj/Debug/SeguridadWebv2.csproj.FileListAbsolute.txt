@@ -344,3 +344,4 @@ C:\Users\Gustavo\Documents\GitHub\SeguridadMCGA\SeguridadWebv2\bin\es\System.Web
 C:\Users\Gustavo\Documents\GitHub\SeguridadMCGA\SeguridadWebv2\obj\Debug\SeguridadWebv2.csprojResolveAssemblyReference.cache
 C:\Users\Gustavo\Documents\GitHub\SeguridadMCGA\SeguridadWebv2\obj\Debug\SeguridadWebv2.dll
 C:\Users\Gustavo\Documents\GitHub\SeguridadMCGA\SeguridadWebv2\obj\Debug\SeguridadWebv2.pdb
+C:\Users\Gustavo\Documents\GitHub\SeguridadMCGA\SeguridadWebv2\obj\Debug\SeguridadWebv2.csprojFakesResolveAssemblyReference.cache

@@ -195,6 +195,9 @@ namespace SeguridadWebv2.Models
                 },
                 new ApplicationRole {
                     Name = "Eliminar_Usuario"
+                },
+                new ApplicationRole {
+                    Name = "AllUsuarios"
                 }
             };
             PermisosUsuario.ForEach(c => db.Roles.Add(c));
@@ -212,6 +215,9 @@ namespace SeguridadWebv2.Models
                 },
                 new ApplicationRole {
                     Name = "Eliminar_Grupo"
+                },
+                new ApplicationRole {
+                    Name = "AllGrupos"
                 }
             };
             PermisosGrupo.ForEach(c => db.Roles.Add(c));
@@ -229,9 +235,32 @@ namespace SeguridadWebv2.Models
                 },
                 new ApplicationRole {
                     Name = "Eliminar_Permiso"
+                },
+                new ApplicationRole {
+                    Name = "AllPermisos"
                 }
             };
             PermisosUsuario.ForEach(c => db.Roles.Add(c));
+
+            var PermisosAutos = new List<ApplicationRole> {
+                new ApplicationRole {
+                    Name = "Agregar_Auto"
+                },
+                new ApplicationRole {
+                    Name = "Editar_Auto"
+                },
+                new ApplicationRole {
+                    Name = "Detalle_Auto"
+                },
+                new ApplicationRole {
+                    Name = "Eliminar_Auto"
+                },
+                new ApplicationRole {
+                    Name = "AllAutos"
+                }
+            };
+            PermisosAutos.ForEach(c => db.Roles.Add(c));
+
 
             var grupos = new List<ApplicationGroup> {
                 new ApplicationGroup {
@@ -245,6 +274,10 @@ namespace SeguridadWebv2.Models
                 new ApplicationGroup {
                     Name = "Gestionar Acciones",
                     Description = "Gestionar Acciones"
+                },
+                new ApplicationGroup {
+                    Name = "Gestionar Autos",
+                    Description = "Gestionar Autos"
                 },
              };
             grupos.ForEach(c => db.ApplicationGroups.Add(c));
