@@ -12,7 +12,6 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace SeguridadWebv2.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class UsuariosAdminController : Controller
     {
         public UsuariosAdminController()
@@ -76,6 +75,7 @@ namespace SeguridadWebv2.Controllers
         }
 
 
+        [Authorize(Roles = "Admin, Detalle_Usuario")]
         public async Task<ActionResult> Detalles(string id)
         {
             if (id == null)
@@ -91,6 +91,7 @@ namespace SeguridadWebv2.Controllers
         }
 
 
+        [Authorize(Roles = "Admin, Agregar_Usuario")]
         public ActionResult Agregar()
         {
             // Show a list of available groups:
@@ -143,6 +144,7 @@ namespace SeguridadWebv2.Controllers
         }
 
 
+        [Authorize(Roles = "Admin, Editar_Usuario")]
         public async Task<ActionResult> Editar(string id)
         {
             if (id == null)
@@ -214,6 +216,7 @@ namespace SeguridadWebv2.Controllers
         }
 
 
+        [Authorize(Roles = "Admin, Eliminar_Usuario")]
         public async Task<ActionResult> Eliminar(string id)
         {
             if (id == null)

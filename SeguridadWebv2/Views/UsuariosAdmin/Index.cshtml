@@ -6,7 +6,9 @@
 
 <h2>Listado de Usuarios</h2>
 <p>
-    @Html.ActionLink("Agregar", "Agregar", new { @class ="btn btn-primary"})
+    @if (User.IsInRole("Admin") || User.IsInRole("Agregar_Usuario")) {
+        @Html.ActionLink("Agregar", "Agregar", new { @class ="btn btn-primary"})
+    }
 </p>
 <div class="row">
         <table class="table table-striped table-condensed">
@@ -32,9 +34,12 @@
                         <td>@Html.DisplayFor(modelItem => item.Estado)</td>
                         <td>@Html.DisplayFor(modelItem => item.Roles.Count)</td>
                         <td class="text-center">
-                            <a href="@Url.Action("Detalles", "UsuariosAdmin", new { id = item.Id })" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-pencil"></span> Detalle</a>
-                            <a href="@Url.Action("Editar", "UsuariosAdmin", new { id = item.Id })" class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span> Editar</a>
-                            <a href="@Url.Action("Eliminar", "UsuariosAdmin", new { id= item.Id })" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
+                            @if (User.IsInRole("Admin") || User.IsInRole("Detalle_Usuario")) {
+                            <a href="@Url.Action("Detalles", "UsuariosAdmin", new { id = item.Id })" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-pencil"></span> Detalle</a>}
+                            @if (User.IsInRole("Admin") || User.IsInRole("Editar_Usuario")) { 
+                            <a href="@Url.Action("Editar", "UsuariosAdmin", new { id = item.Id })" class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span> Editar</a>}
+                            @if (User.IsInRole("Admin") || User.IsInRole("Eliminar_Usuario")) { 
+                            <a href="@Url.Action("Eliminar", "UsuariosAdmin", new { id= item.Id })" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>}
                         </td>
                     </tr>
                 }

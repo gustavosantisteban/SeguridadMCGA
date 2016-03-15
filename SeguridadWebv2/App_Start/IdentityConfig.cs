@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Twilio;
+using System.Collections.Generic;
 
 namespace SeguridadWebv2.Models
 {
@@ -85,9 +86,9 @@ namespace SeguridadWebv2.Models
         public async Task SendAsync(IdentityMessage message)
         {
                 // Plug in your email service here to send an email.
-                var credentialUserName = "lingux777@gmail.com";
-                var sentFrom = "lingux777@gmail.com";
-                var pwd = "nob.com2013";
+                var credentialUserName = "finalmcga@gmail.com";
+                var sentFrom = "finalmcga@gmail.com";
+                var pwd = "finalmcga123";
 
                 // Configure the client:
                 System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("smtp.gmail.com");
@@ -181,6 +182,72 @@ namespace SeguridadWebv2.Models
             groupManager.CreateGroup(newGroup);
             groupManager.SetUserGroups(user.Id, new string[] { newGroup.Id });
             groupManager.SetGroupRoles(newGroup.Id, new string[] { role.Name });
+
+            var PermisosUsuario = new List<ApplicationRole> {
+                new ApplicationRole {
+                    Name = "Agregar_Usuario"
+                },
+                new ApplicationRole {
+                    Name = "Editar_Usuario"
+                },
+                new ApplicationRole {
+                    Name = "Detalle_Usuario"
+                },
+                new ApplicationRole {
+                    Name = "Eliminar_Usuario"
+                }
+            };
+            PermisosUsuario.ForEach(c => db.Roles.Add(c));
+
+
+            var PermisosGrupo = new List<ApplicationRole> {
+                new ApplicationRole {
+                    Name = "Agregar_Grupo"
+                },
+                new ApplicationRole {
+                    Name = "Editar_Grupo"
+                },
+                new ApplicationRole {
+                    Name = "Detalle_Grupo"
+                },
+                new ApplicationRole {
+                    Name = "Eliminar_Grupo"
+                }
+            };
+            PermisosGrupo.ForEach(c => db.Roles.Add(c));
+
+
+            var PermisosAcciones = new List<ApplicationRole> {
+                new ApplicationRole {
+                    Name = "Agregar_Permiso"
+                },
+                new ApplicationRole {
+                    Name = "Editar_Permiso"
+                },
+                new ApplicationRole {
+                    Name = "Detalle_Permiso"
+                },
+                new ApplicationRole {
+                    Name = "Eliminar_Permiso"
+                }
+            };
+            PermisosUsuario.ForEach(c => db.Roles.Add(c));
+
+            var grupos = new List<ApplicationGroup> {
+                new ApplicationGroup {
+                    Name = "Gestionar Usuarios",
+                    Description = "Gestionar Usuarios"
+                },
+                new ApplicationGroup {
+                    Name = "Gestionar Grupos",
+                    Description = "Gestionar Grupos"
+                },
+                new ApplicationGroup {
+                    Name = "Gestionar Acciones",
+                    Description = "Gestionar Acciones"
+                },
+             };
+            grupos.ForEach(c => db.ApplicationGroups.Add(c));
         }
     }
 
